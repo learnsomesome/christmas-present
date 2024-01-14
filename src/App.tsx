@@ -144,8 +144,8 @@ export default function App() {
       meaning: "第一次圣诞",
       content: (
         <React.Fragment>
-          <p className="text-blue-300">"把美好的回忆都装起来。"</p>
-          <p>祝呆呆圣诞快乐~</p>
+          <p className="text-orange-300">"把美好的回忆都装起来。"</p>
+          <p>祝呆宝圣诞快乐~</p>
         </React.Fragment>
       ),
       img: "dai",
@@ -195,6 +195,51 @@ export default function App() {
       ),
       img: "wo",
       music: "wo",
+    },
+    {
+      title: "关于爱的定义",
+      meaning: "第一次隔阂",
+      content: (
+        <React.Fragment>
+          <p className="text-blue-300">"我要的是道歉吗？"</p>
+          <p className="text-blue-300">
+            "我说我要转身了！！我要悄悄走了！！！你到底懂不懂啊！！"
+          </p>
+          <p className="text-blue-300">"我要的是你抱！！"</p>
+          <p>我好像变得不那么懂你了。</p>
+          <p>我想做些什么，但却是一错再错。</p>
+          <p>没有哄好你，也没有在该挽留的时候留下。</p>
+          <p>嗯。那天的我真的让你失望了。</p>
+          <p>
+            我好像沉溺于那个对我偏爱的你，而忽略了你也是一个拥有喜怒哀乐的完整的人。
+          </p>
+          <p>所以当你在电话那头哭泣，我当下大脑空白，手足无措。</p>
+          <p>那一刻我真的很害怕失去你。</p>
+          <p>但庆幸你还没有离开。</p>
+          <p>从那之后，我开始反思自己的言行，开始习惯所有样子的你。</p>
+          <p>
+            你不需要变成我所希望的那个样子，真实的表达当下的感受，无需自责，也无需隐藏。
+          </p>
+          <p>我也不会再让你因为我而伤心难过了。</p>
+        </React.Fragment>
+      ),
+      img: "guan",
+      music: "guan",
+    },
+    {
+      title: "Record",
+      meaning: "第一次生日",
+      time: "2024.01.12",
+      content: (
+        <React.Fragment>
+          <p className="text-orange-300">
+            "生日快乐，呆宝，希望你能一直勇敢快乐下去。"
+          </p>
+          <p>祝呆宝生日快乐~</p>
+        </React.Fragment>
+      ),
+      img: "birthday",
+      music: "birthday",
     },
   ];
 
