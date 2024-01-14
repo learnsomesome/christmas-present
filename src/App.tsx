@@ -139,7 +139,8 @@ export default function App() {
       music: "chu",
     },
     {
-      title: "🎄",
+      title: "Record",
+      time: "2023.12.25",
       meaning: "第一次圣诞",
       content: (
         <React.Fragment>
@@ -149,6 +150,51 @@ export default function App() {
       ),
       img: "dai",
       music: "dai",
+    },
+    {
+      title: "这就是爱",
+      meaning: "第一次跨年",
+      content: (
+        <React.Fragment>
+          <p className="text-blue-300">
+            "新的一年了，阿蕉我还是最最最喜欢你！！"
+          </p>
+          <p>你说往年都没有特别留意跨年这件事，就这么普普通通的过去了。</p>
+          <p>
+            其实在我看来，跨年就是要和最重要最珍惜的那个人在一起，共同去迎接新一年的生活。
+          </p>
+          <p>其实前一天晚上，我就写好了那些想跟你说的话。</p>
+          <p>有对于你我的感受，也有对于你我的期许。</p>
+          <p>你认真的看了每一句话，也句句回应予我。</p>
+          <p>在那个时刻，我觉得世间的美好幸福莫过于此。</p>
+          <p>陪伴，是最长情的告白。</p>
+          <p>我也最喜欢你喽!</p>
+        </React.Fragment>
+      ),
+      img: "ai",
+      music: "ai",
+    },
+    {
+      title: "有我呢",
+      meaning: "第一次揭伤",
+      content: (
+        <React.Fragment>
+          <p className="text-blue-300">
+            "我知道人都有阴暗面，但是我不想告诉你我的阴暗面不是怕破坏什么印象啊什么的，我是怕你是知道了害怕，怕吓着你，我告诉你了，是因为我想你看到一个完整的我，爱笑的是我，爱哭的也是我。"
+          </p>
+          <p>你提起了你曾经抑郁的往事。</p>
+          <p>在每个夜晚哭泣着想离去，甚至一个人走入冰冷的海。</p>
+          <p>听着你娓娓道来，我触目惊心。</p>
+          <p>虽然不能真的感同身受，但我知道那段日子真的很难熬。</p>
+          <p>
+            我没有害怕，更没有想转身离开，因为是你自己走出了黑暗，现在的你就完整的站在我的面前，那是多么鲜活而独特的生命。
+          </p>
+          <p>反而，我更想去用力的抱住你。</p>
+          <p>“别怕，亲爱的，有我呢。”</p>
+        </React.Fragment>
+      ),
+      img: "wo",
+      music: "wo",
     },
   ];
 
@@ -160,9 +206,11 @@ export default function App() {
 
   return (
     <>
-      <div className="h-screen overflow-y-auto p-2 gap-2 grid grid-cols-2 sm:grid-cols-4 bg-slate-600">
+      <div className="overflow-y-auto px-4 py-2 flex flex-wrap justify-between bg-slate-600">
         {list.map((item, index) => (
           <Card
+            style={{ width: "calc(50% - 0.5rem)" }}
+            className="my-2"
             shadow="sm"
             key={index}
             isPressable
@@ -184,7 +232,7 @@ export default function App() {
                 radius="lg"
                 width="100%"
                 alt={item.title}
-                className="w-full object-cover h-[170px]"
+                className="w-full object-cover h-[140px]"
                 src={
                   new URL(`./assets/images/${item.img}.jpg`, import.meta.url)
                     .href
@@ -193,6 +241,7 @@ export default function App() {
             </CardBody>
             <CardFooter className="h-10 text-small justify-between">
               <b>{item.title}</b>
+              {item.time && <p className="text-default-500">{item.time}</p>}
             </CardFooter>
           </Card>
         ))}
