@@ -10,6 +10,10 @@ import {
 } from "@nextui-org/react";
 import React from "react";
 
+const bgUrl = new URL(
+  `../../assets/images/bg_musicMemories.jpg`,
+  import.meta.url
+).href;
 const list = [
   {
     title: "瞬",
@@ -251,7 +255,7 @@ const MusicMemories = () => {
     <>
       <div
         className="overflow-y-auto px-4 py-2 flex flex-wrap justify-between bg-no-repeat bg-cover bg-top"
-        style={{ backgroundImage: 'url("/musicMemories.jpg")' }}
+        style={{ backgroundImage: `url(${bgUrl})` }}
       >
         {list.map((item, index) => (
           <Card

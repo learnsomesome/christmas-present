@@ -8,6 +8,16 @@ import {
 } from "@nextui-org/react";
 import React from "react";
 
+const bgUrl = new URL(`../../assets/images/bg_entry.jpg`, import.meta.url).href;
+const sheepAvatarUrl = new URL(
+  `../../assets/images/avatar_sheep.jpg`,
+  import.meta.url
+).href;
+const wolfAvatarUrl = new URL(
+  `../../assets/images/avatar_wolf.jpg`,
+  import.meta.url
+).href;
+
 const Entry = ({ onAdmitted }: { onAdmitted: any }) => {
   const [errorMessage, setErrorMessage] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -15,11 +25,11 @@ const Entry = ({ onAdmitted }: { onAdmitted: any }) => {
   return (
     <div
       className="flex flex-col items-center justify-center h-screen bg-no-repeat bg-cover bg-top"
-      style={{ backgroundImage: 'url("/entry.jpg")' }}
+      style={{ backgroundImage: `url(${bgUrl})` }}
     >
       <div className="flex gap-4 justify-center">
-        <Avatar size="lg" src="/avatar_wolf.jpg" />
-        <Avatar size="lg" src="/avatar_sheep.jpg" />
+        <Avatar size="lg" src={sheepAvatarUrl} />
+        <Avatar size="lg" src={wolfAvatarUrl} />
       </div>
       <div className="mt-4 mb-8 h-12">
         <Input
