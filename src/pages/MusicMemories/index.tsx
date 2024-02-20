@@ -30,7 +30,7 @@ const ImagesRender = ({ images }: { images: string[] }) => (
         return (
           <PhotoView key={item} src={src}>
             <Image
-              loading="lazy"
+              loading="eager"
               alt={item}
               className="h-[140px] w-full object-cover my-2"
               key={item}
