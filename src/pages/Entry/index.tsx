@@ -77,7 +77,7 @@ const Entry = ({ onAdmitted }: { onAdmitted: any }) => {
             }
           }}
         >
-          ▶️
+          👉
         </Button>
       </div>
     </div>

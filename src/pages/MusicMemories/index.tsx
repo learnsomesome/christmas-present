@@ -283,15 +283,18 @@ const MusicMemories = () => {
           <p className="text-blue-300">"而是因为游戏里有你。"</p>
           <Accordion>
             <AccordionItem
+              disableIndicatorAnimation
               key="1"
               aria-label="随地大小拍"
               title="随地大小拍"
               indicator="🕯"
             >
-              <div className="flex overflow-x-auto gap-x-2">
+              <div className="max-h-80 overflow-y-auto gap-y-2">
                 {["sui1", "sui2"].map((item) => (
-                  <img
-                    className="h-36 w-4/5 object-cover rounded"
+                  <Image
+                    loading="lazy"
+                    alt={item}
+                    className="h-[140px] w-full object-cover my-2"
                     key={item}
                     src={
                       new URL(
@@ -305,16 +308,19 @@ const MusicMemories = () => {
               </div>
             </AccordionItem>
             <AccordionItem
+              disableIndicatorAnimation
               key="2"
               aria-label="谁家小屁孩"
               title="谁家小屁孩"
               indicator="🕯"
             >
-              <div className="flex overflow-x-auto gap-x-2">
+              <div className="max-h-80 overflow-y-auto gap-y-2">
                 {["xiao1", "xiao2", "xiao3", "xiao4", "xiao5", "xiao6"].map(
                   (item) => (
-                    <img
-                      className="h-36 w-4/5 object-cover rounded"
+                    <Image
+                      loading="lazy"
+                      alt={item}
+                      className="h-[140px] w-full object-cover my-2"
                       key={item}
                       src={
                         new URL(
@@ -329,12 +335,13 @@ const MusicMemories = () => {
               </div>
             </AccordionItem>
             <AccordionItem
+              disableIndicatorAnimation
               key="3"
               aria-label="一家人整整齐齐"
               title="一家人整整齐齐"
               indicator="🕯"
             >
-              <div className="flex overflow-x-auto gap-x-2">
+              <div className="max-h-80 overflow-y-auto">
                 {[
                   "yi1",
                   "yi2",
@@ -356,8 +363,10 @@ const MusicMemories = () => {
                   "yi18",
                   "yi19",
                 ].map((item) => (
-                  <img
-                    className="h-36 w-4/5 object-cover rounded"
+                  <Image
+                    loading="lazy"
+                    alt={item}
+                    className="h-[140px] w-full object-cover my-2"
                     key={item}
                     src={
                       new URL(
@@ -478,8 +487,9 @@ const MusicMemories = () => {
                 setPreviewImage("");
               }}
             >
-              <img
+              <Image
                 alt={previewImage}
+                radius="none"
                 className="w-full object-cover"
                 src={
                   new URL(
