@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import "./index.css";
+import "react-photo-view/dist/react-photo-view.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

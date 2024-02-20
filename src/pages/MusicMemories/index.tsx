@@ -11,20 +11,41 @@ import {
   ModalHeader,
 } from "@nextui-org/react";
 import React from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const bgUrl = new URL(
   `../../assets/images/bg_musicMemories.jpg`,
   import.meta.url
 ).href;
 
+const ImagesRender = ({ images }: { images: string[] }) => (
+  <PhotoProvider>
+    <div className="max-h-80 overflow-y-auto gap-y-2">
+      {images.map((item) => {
+        const src = new URL(
+          `../../assets/images/guangyu/${item}.jpg`,
+          import.meta.url
+        ).href;
+
+        return (
+          <PhotoView key={item} src={src}>
+            <Image
+              loading="lazy"
+              alt={item}
+              className="h-[140px] w-full object-cover my-2"
+              key={item}
+              src={src}
+            />
+          </PhotoView>
+        );
+      })}
+    </div>
+  </PhotoProvider>
+);
+
 const MusicMemories = () => {
   const [current, setCurrent] = React.useState<any>(null);
   const [audio, setAudio] = React.useState<any>(null);
-  const [previewImage, setPreviewImage] = React.useState<string>("");
-
-  const onImagePreview = (name: string) => {
-    setPreviewImage(name);
-  };
 
   const list = [
     {
@@ -289,23 +310,7 @@ const MusicMemories = () => {
               title="随地大小拍"
               indicator="🕯"
             >
-              <div className="max-h-80 overflow-y-auto gap-y-2">
-                {["sui1", "sui2"].map((item) => (
-                  <Image
-                    loading="lazy"
-                    alt={item}
-                    className="h-[140px] w-full object-cover my-2"
-                    key={item}
-                    src={
-                      new URL(
-                        `../../assets/images/guangyu/${item}.jpg`,
-                        import.meta.url
-                      ).href
-                    }
-                    onClick={() => onImagePreview(item)}
-                  />
-                ))}
-              </div>
+              <ImagesRender images={["sui1", "sui2"]} />
             </AccordionItem>
             <AccordionItem
               disableIndicatorAnimation
@@ -314,25 +319,9 @@ const MusicMemories = () => {
               title="谁家小屁孩"
               indicator="🕯"
             >
-              <div className="max-h-80 overflow-y-auto gap-y-2">
-                {["xiao1", "xiao2", "xiao3", "xiao4", "xiao5", "xiao6"].map(
-                  (item) => (
-                    <Image
-                      loading="lazy"
-                      alt={item}
-                      className="h-[140px] w-full object-cover my-2"
-                      key={item}
-                      src={
-                        new URL(
-                          `../../assets/images/guangyu/${item}.jpg`,
-                          import.meta.url
-                        ).href
-                      }
-                      onClick={() => onImagePreview(item)}
-                    />
-                  )
-                )}
-              </div>
+              <ImagesRender
+                images={["xiao1", "xiao2", "xiao3", "xiao4", "xiao5", "xiao6"]}
+              />
             </AccordionItem>
             <AccordionItem
               disableIndicatorAnimation
@@ -342,41 +331,29 @@ const MusicMemories = () => {
               indicator="🕯"
             >
               <div className="max-h-80 overflow-y-auto">
-                {[
-                  "yi1",
-                  "yi2",
-                  "yi3",
-                  "yi4",
-                  "yi5",
-                  "yi6",
-                  "yi7",
-                  "yi8",
-                  "yi9",
-                  "yi10",
-                  "yi11",
-                  "yi12",
-                  "yi13",
-                  "yi14",
-                  "yi15",
-                  "yi16",
-                  "yi17",
-                  "yi18",
-                  "yi19",
-                ].map((item) => (
-                  <Image
-                    loading="lazy"
-                    alt={item}
-                    className="h-[140px] w-full object-cover my-2"
-                    key={item}
-                    src={
-                      new URL(
-                        `../../assets/images/guangyu/${item}.jpg`,
-                        import.meta.url
-                      ).href
-                    }
-                    onClick={() => onImagePreview(item)}
-                  />
-                ))}
+                <ImagesRender
+                  images={[
+                    "yi1",
+                    "yi2",
+                    "yi3",
+                    "yi4",
+                    "yi5",
+                    "yi6",
+                    "yi7",
+                    "yi8",
+                    "yi9",
+                    "yi10",
+                    "yi11",
+                    "yi12",
+                    "yi13",
+                    "yi14",
+                    "yi15",
+                    "yi16",
+                    "yi17",
+                    "yi18",
+                    "yi19",
+                  ]}
+                />
               </div>
             </AccordionItem>
           </Accordion>
@@ -441,6 +418,7 @@ const MusicMemories = () => {
         ))}
       </div>
       <Modal
+        isDismissable={false}
         size="full"
         isOpen={!!current}
         placement="center"
@@ -465,41 +443,6 @@ const MusicMemories = () => {
                 {current?.content}
               </ModalBody>
             </>
-          )}
-        </ModalContent>
-      </Modal>
-      <Modal
-        hideCloseButton
-        size="full"
-        isOpen={!!previewImage}
-        placement="center"
-        onOpenChange={(isOpen) => {
-          if (!isOpen) {
-            setPreviewImage("");
-          }
-        }}
-      >
-        <ModalContent className="bg-black/70">
-          {() => (
-            <ModalBody
-              className="h-full flex items-center justify-center px-0"
-              onClick={() => {
-                setPreviewImage("");
-              }}
-            >
-              <Image
-                alt={previewImage}
-                radius="none"
-                className="w-full object-cover"
-                src={
-                  new URL(
-                    `../../assets/images/guangyu/${previewImage}.jpg`,
-                    import.meta.url
-                  ).href
-                }
-                onClick={(e) => e.stopPropagation()}
-              />
-            </ModalBody>
           )}
         </ModalContent>
       </Modal>
