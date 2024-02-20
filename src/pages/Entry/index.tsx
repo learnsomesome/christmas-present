@@ -28,8 +28,18 @@ const Entry = ({ onAdmitted }: { onAdmitted: any }) => {
       style={{ backgroundImage: `url(${bgUrl})` }}
     >
       <div className="flex gap-4 justify-center">
-        <Avatar size="lg" src={sheepAvatarUrl} />
-        <Avatar size="lg" src={wolfAvatarUrl} />
+        <Popover placement="top">
+          <PopoverTrigger>
+            <Avatar size="lg" src={sheepAvatarUrl} />
+          </PopoverTrigger>
+          <PopoverContent>❤</PopoverContent>
+        </Popover>
+        <Popover placement="top">
+          <PopoverTrigger>
+            <Avatar size="lg" src={wolfAvatarUrl} />
+          </PopoverTrigger>
+          <PopoverContent>❤</PopoverContent>
+        </Popover>
       </div>
       <div className="mt-4 mb-8 h-12">
         <Input
@@ -57,7 +67,7 @@ const Entry = ({ onAdmitted }: { onAdmitted: any }) => {
               💡
             </Button>
           </PopoverTrigger>
-          <PopoverContent>提示: 第一天认识的日子哦</PopoverContent>
+          <PopoverContent>密码是第一天认识的日子哦</PopoverContent>
         </Popover>
         <Button
           isIconOnly
