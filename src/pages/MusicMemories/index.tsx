@@ -310,7 +310,7 @@ const MusicMemories = () => {
               title="随地大小拍"
               indicator="🕯"
             >
-              <ImagesRender images={["sui1", "sui2"]} />
+              <ImagesRender images={["sui1", "sui2", "sui3", "sui4", "sui5"]} />
             </AccordionItem>
             <AccordionItem
               disableIndicatorAnimation
