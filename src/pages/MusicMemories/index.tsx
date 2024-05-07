@@ -362,6 +362,28 @@ const MusicMemories = () => {
       img: "guang",
       music: "guang",
     },
+    {
+      title: "小微光",
+      meaning: "再遇",
+      content: (
+        <React.Fragment>
+          <p className="text-orange-300">
+            "想成为你爱的模样，也能在你面前发光。"
+          </p>
+          <p>其实，在做出了那样的事之后，我是没有理由再回来的。</p>
+          <p>在我们的关系中，你承担也付出了更多。</p>
+          <p>我知道你为了我下了这一步险棋。</p>
+          <p>所以我做不到就这样离开。</p>
+          <p>最近一段时间，我也有自己好好思考过。</p>
+          <p>现在的自己要的到底是什么，到底需要做些什么。</p>
+          <p>而你一定会是在这条路上不可或缺的那个人。</p>
+          <p>我想说，你坚定的选择，这步棋不会后悔。</p>
+          <p>我们会一起等到那一天的。</p>
+        </React.Fragment>
+      ),
+      img: "wei",
+      music: "wei",
+    },
   ];
 
   React.useEffect(() => {
