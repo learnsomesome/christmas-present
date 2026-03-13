@@ -18,13 +18,19 @@ const bgUrl = new URL(
   import.meta.url
 ).href;
 
-const ImagesRender = ({ images }: { images: string[] }) => (
+const ImagesRender = ({
+  images,
+  dirName,
+}: {
+  images: string[];
+  dirName?: string;
+}) => (
   <PhotoProvider>
     <div className="max-h-80 overflow-y-auto gap-y-2">
       {images.map((item) => {
         const src = new URL(
-          `../../assets/images/guangyu/${item}.jpg`,
-          import.meta.url
+          `../../assets/images/${dirName || "guangyu"}/${item}.jpg`,
+          import.meta.url,
         ).href;
 
         return (
@@ -383,6 +389,78 @@ const MusicMemories = () => {
       ),
       img: "wei",
       music: "wei",
+    },
+    {
+      title: '特别的人',
+      meaning: "爱，始终如一",
+      content: (
+        <React.Fragment>
+          <p className="text-orange-300">
+            "草莓要等！草莓小蛋糕不能等！！！"
+          </p>
+          <p className="text-orange-300">
+            "草莓不需要等了！！"
+          </p>
+          <p>草莓要等。</p>
+          <p>是因为想给我最好的。</p>
+          <p>草莓不能等。</p>
+          <p>是因为爱我，一刻都不想耽误。</p>
+          <p>他们说什么是爱。</p>
+          <p>爱就是为你学会等待，又为你忘记等待。</p>
+          <p>谢谢你宝。</p>
+          <p>这是我们所有心动的起点。</p>
+          <p>也是心甘情愿的终点。</p>
+          <p>你永远是那个特别的人。</p>
+          <Accordion>
+            <AccordionItem
+              disableIndicatorAnimation
+              key="1"
+              aria-label="2023.12.18"
+              title="2023.12.18"
+              indicator="🎂"
+            >
+              <ImagesRender
+                dirName="caomei"
+                images={["dan1", "dan2", "dan3", "dan4"]}
+              />
+            </AccordionItem>
+            <AccordionItem
+              disableIndicatorAnimation
+              key="2"
+              aria-label="2025.12.25"
+              title="2025.12.25"
+              indicator="🍓"
+            >
+              <ImagesRender
+                dirName="caomei"
+                images={["cao1", "cao2", "cao3"]}
+              />
+            </AccordionItem>
+          </Accordion>
+        </React.Fragment>
+      ),
+      img: "te",
+      music: "te",
+    },
+    {
+      title: '第57次取消发送',
+      meaning: "缘，妙不可言",
+      content: (
+        <React.Fragment>
+          <p className="text-orange-300">
+            "更喜欢缘分这个词，事在人为实在太苦了。"
+          </p>
+          <p>不知道写些什么好，翻到了这首你最近录的歌。</p>
+          <p>这首歌写的是一段永远不会发出去的话，像在沙漠里写信，收件人却是海市蜃楼。</p>
+          <p>想到刚认识时的无话不谈，互相取暖。那真的是一段很特别的时光。</p>
+          <p>倒不是说现在我们交流少了而渐行渐远。反而觉得我们始终有一层羁绊。</p>
+          <p>虽然彼此过着自己的生活。但只要想到彼此，他/她都会在。</p>
+          <p>我始终感谢缘分。妙不可言。</p>
+          <p>早安，宝！</p>
+        </React.Fragment>
+      ),
+      img: "di",
+      music: "di",
     },
   ];
 
